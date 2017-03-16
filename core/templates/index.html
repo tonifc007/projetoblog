@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Django</title>
+</head>
+<body>
+<h3>Postagens</h3>
+{% for post in posts %}
+	<h4><a href='{% url 'core:detail' post.pk %}'>{{ post.titulo }}</a></h4>
+	<p>{{ post.data }}</p><br>
+{% empty %}
+	<h4>Não há posts publicados</h4>
+{% endfor %}
+</body>
+</html>
